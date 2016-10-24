@@ -1,5 +1,12 @@
 #pivot is a value, this function return index of pivot in array
-def partition(arr,left,right)         
+def partition(arr,left,right)   
+=begin
+using random pivot to optimize runtime
+    rand_index = rand(left..right)
+    pivot = arr[rand_index]
+    #swap pivot to end
+    arr[rand_index],arr[right] = arr[right],arr[rand_index]      
+=end
     pivot = arr[right]
     #puts "pivot:" + pivot.to_s
     i = left
