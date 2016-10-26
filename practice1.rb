@@ -1,4 +1,5 @@
 # pivot is a value, this function return index of pivot in array
+require 'pry'
 def partition arr, left, right
 =begin
 # using random pivot to optimize runtime
@@ -18,10 +19,12 @@ def partition arr, left, right
         end
     }
     arr[i], arr[right] = arr[right], arr[i]
+    binding.pry
     i
 end
 
 def quicksort arr, left, right       # From min to max
+      binding.pry
     if left < right
         pivot_index = partition arr, left, right
         quicksort arr, left, pivot_index-1
