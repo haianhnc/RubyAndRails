@@ -26,6 +26,8 @@ module MergeSort
     merged_arr
   end
   def merge_sort arr
+    throw ArgumentError unless arr.kind_of?(Array)
+    throw ArgumentError unless arr != nil
     if arr.length < 2
       return arr
     end
