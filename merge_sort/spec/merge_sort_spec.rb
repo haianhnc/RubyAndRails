@@ -38,9 +38,7 @@ RSpec.describe 'Merge Sort' do
       let (:arr) {[2]}
 
       it 'return sorted array' do
-        expect(merge_sort(arr)).to eq arr
-        # Question why i can not write like This
-        # expect(merge_sort(arr)).to eq ([2])
+        expect(merge_sort(arr)).to eq [2]
       end
     end
     # 2 element array
