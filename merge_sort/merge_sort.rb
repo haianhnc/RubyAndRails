@@ -1,5 +1,5 @@
 require 'pry'
-module MergeSort
+module     MergeSort
   def merge arr1, arr2
   #  binding.pry
     puts arr1.to_s
@@ -31,7 +31,7 @@ module MergeSort
     if arr.length < 2
       return arr
     end
-    arr1  = arr[0, arr.length/2]
+    arr1 = arr[0, arr.length/2]
     arr2 = arr[arr.length/2,arr.length-1]
     arr1 = merge_sort arr1
     arr2 = merge_sort arr2
