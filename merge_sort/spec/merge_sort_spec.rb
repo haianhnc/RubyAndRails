@@ -4,13 +4,12 @@ require_relative '../merge_sort.rb'
 include MergeSort
 
 RSpec.describe 'Merge Sort' do
-# Invalid input
   context 'invalid input' do
     context 'input is nil' do
       let (:arr) {nil}
 
       it 'raise agrument error exception' do
-        expect { merge_sort arr }.to raise_error ArgumentError
+        expect {merge_sort arr}.to raise_error ArgumentError
       end
     end
 
@@ -18,22 +17,20 @@ RSpec.describe 'Merge Sort' do
       let (:arr) {2}
 
       it 'raise argument error exception' do
-        expect { merge_sort arr }.to raise_error ArgumentError
+        expect {merge_sort arr}.to raise_error ArgumentError
       end
     end
   end
-  # Valid input
+
   context 'valid input' do
-    #empty array
     context 'empty array' do
       let (:arr) {[]}
 
       it 'return empty array' do
         expect(merge_sort(arr)).to eq ([])
-        #expect {merge_sort(arr)}.to eq []
       end
     end
-    # 1 element array
+
     context '1 element array' do
       let (:arr) {[2]}
 
@@ -41,16 +38,15 @@ RSpec.describe 'Merge Sort' do
         expect(merge_sort(arr)).to eq [2]
       end
     end
-    # 2 element array
+
     context '2 elements array' do
-      let (:arr) { [3, 2] }
+      let (:arr) {[3, 2]}
 
       it 'return sorted array' do
         expect(merge_sort(arr)).to eq [2, 3]
-
       end
     end
-    # multi elements array
+
     context 'multi elements array' do
       context 'increasing sorted array' do
         let (:arr) {[1, 2, 5, 9, 123]}
@@ -77,7 +73,7 @@ RSpec.describe 'Merge Sort' do
       end
 
       context 'big array' do
-        let (:arr) {Array.new(10000) { rand(1.1000)} }
+        let (:arr) {Array.new(10000) { rand(1.1000)}}
 
         it 'return sorted array' do
           expect(merge_sort arr ).to be_monotonically_increasing
