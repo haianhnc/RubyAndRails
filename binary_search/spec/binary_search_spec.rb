@@ -68,7 +68,7 @@ RSpec.describe 'Binary Search' do
 				let (:key) {88}
 
 				it 'key not found in arrray' do
-					expect(binary_search arr, key).to eq  -1
+					expect(binary_search arr, key).to eq -1
 				end
 			end
 		end
@@ -106,7 +106,7 @@ RSpec.describe 'Binary Search' do
 			let (:key) {-1}
 
 			it 'not found in array' do
-				expect(binary_search arr, key).to eq  -1
+				expect(binary_search arr, key).to eq -1
 			end
 		end
 
@@ -115,7 +115,7 @@ RSpec.describe 'Binary Search' do
 			let (:key) {20007}
 
 			it 'not found in array' do
-				expect(binary_search arr, key).to eq  -1
+				expect(binary_search arr, key).to eq -1
 			end
 		end
 	end

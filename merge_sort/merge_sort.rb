@@ -5,6 +5,7 @@ module MergeSort
     # collect smaller element of 2 arrays until one of array become empty
     while 0 < arr1.length && 0 < arr2.length do
       if arr1[0] > arr2[0]
+
         merged_arr.push arr2.delete_at(0)
       else
         merged_arr.push arr1.delete_at(0)
@@ -12,10 +13,10 @@ module MergeSort
     end
 
     # shilf remaining array2 into merged_arr
-    arr2.each{|x| merged_arr << x } if arr2.length > 0
+    arr2.each{|x| merged_arr << x} if arr2.length > 0
     # shilf remaining array1 into merged_arr
-    arr1.each{|x| merged_arr << x } if arr1.length > 0
-    
+    arr1.each{|x| merged_arr << x} if arr1.length > 0
+
     merged_arr
   end
 
