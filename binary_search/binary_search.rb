@@ -7,36 +7,29 @@ module BinarySearch
 		throw ArgumentError unless arr.kind_of?(Array)
 		throw ArgumentError unless arr != nil
 		#throw ArgumentError unless arr.length > 0
+		bn_search arr, 0, arr.length - 1, key
+	end
 
-		if [] == arr
-			binding.pry
-			 return "not found!"
-			 # binding.pry
+	def bn_search arr, left, right, key
+		return -1 unless arr.any?
+
+		if left > right
+			return -1
 		end
 
-		if arr.length == 1
-			if key == arr[0]
-				return 0
-			else
-				return "not found!"
-			end
-			#key == arr[0] ? 0 : "not found!"
+		if left == right && arr[left] == key
+			return left
 		end
 
-		index = 0
-		if key == arr[(arr.length -1)/2]
-			return (arr.length -1)/2
-		end
-
-		if key > arr[(arr.length -1)/2]
-			index += (arr.length -1)/2
-			return  "not found!" unless (binary_search arr[(arr.length -1)/2, arr.length-1]).is_a? Integer
-			index += binary_search arr[(arr.length -1)/2, arr.length-1]
-		end
-
-		if key < arr[(arr.length -1)/2]
-			index += binary_search arr[0, (arr.length -1)/2]
-		end
-		index
+		m = (left + right)/2
+		if arr[m] == key
+			return m
+		elsif arr[m] > key
+			right = m -1
+			return bn_search arr, left, right, key
+		else
+			left = m + 1
+			return bn_search arr, left, right, key
+		end	
 	end
 end
